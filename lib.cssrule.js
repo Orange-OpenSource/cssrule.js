@@ -1,9 +1,19 @@
-/**
- * Ce module permet d'ajouter dynamiquement des règles CSS en Javascript. 
+/*!
+ * Copyright 2011 France Télécom
+ * This software is distributed under the terms of either the MIT
+ * License or the GNU General Public License (GPL) Version 2 or later.
+ * See licence.txt file for more details.
  */
-
-
-/* inspired by http://code.google.com/p/doctype/wiki/ArticleInstallStyles */
+ 
+/* cssrule.js
+ * Version : 1
+ * 
+ * Authors: Julien Wajsberg <julien.wajsberg@orange.com>
+ * 
+ * This module can insert CSS rules in a cross-browser way.
+ * It was inspired by http://code.google.com/p/doctype/wiki/ArticleInstallStyles
+ *
+*/
 
 
 var cssrule = (function($, document, undefined) {
