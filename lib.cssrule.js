@@ -22,7 +22,7 @@ var cssrule = (function($, document, undefined) {
 	var possibleprops = "cssText,innerText,innerHTML".split(",");
 	var propToSet;
 	
-	var init = function() {
+	function init() {
 		if (document.createStyleSheet) {
 			// in IE
 			stylesheet = document.createStyleSheet();
@@ -39,14 +39,18 @@ var cssrule = (function($, document, undefined) {
 				break;
 			}
 		}
-	};
+	}
 	
-	var add = function(style) {
+	function add(style) {
 		stylesheet[propToSet] += style;
 		return cssrule;
-	};
+	}
 	
 	return {
+		/**
+		 * you must call "init" function on dom ready
+		 * TODO: should we run it automatically when "add" is used the first time ?
+		 */ 
 		init: init,
 		add: add
 	};
