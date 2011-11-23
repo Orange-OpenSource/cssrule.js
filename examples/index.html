@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<body>
+	<div id="div-id" class="div-class">This is a div with an id "div-id" and a class "div-class". </div>
+	<div>
+		<textarea id='rule-textarea'>#div-id { background-color: #fcc; border: 1px solid #daa; }</textarea>
+		<button id="action-button">Add this rule !</button>
+	</div>
+	<script src="../lib.cssrule.js"></script>
+	<script>
+		cssrule.init();
+		
+		// this is quick and dirty
+		document.getElementById("action-button").onclick = function() {
+			var text = document.getElementById("rule-textarea").value;
+			cssrule.add(text);
+		}
+	</script>
+</body>
+</html>
