@@ -16,22 +16,26 @@
 */
 
 
-var cssrule = (function($, document, undefined) {
-	var stylesheet;
+var cssrule = (function(document, undefined) {
 	
-	var possibleprops = "cssText,innerText,innerHTML".split(",");
-	var propToSet;
-	
-	function init() {
+	var propToSet, stylesheet;
+
+	function createStylesheet() {
 		if (document.createStyleSheet) {
 			// in IE
 			stylesheet = document.createStyleSheet();
 		} else {
-			stylesheet = $("<style type='text/css' id='cssrule'></style>").get(0);
-			$("head").append(stylesheet);
+			stylesheet = document.createElement("style");
+			stylesheet.id = "cssrule";
+			
+			// TODO: should we test if there is a head ?
+			document.getElementsByTagName("head")[0].appendChild(stylesheet);
 		}
-
-		var i, cur;
+	}
+	
+	function findPropToSet() {
+		var possibleprops = "cssText,innerText,innerHTML".split(",");
+		
 		for (i = 0; i < possibleprops.length; i++) {
 			cur = possibleprops[i];
 			if (stylesheet[cur] !== undefined) {
@@ -39,6 +43,13 @@ var cssrule = (function($, document, undefined) {
 				break;
 			}
 		}
+	}
+	
+	function init() {
+		var i, cur;
+		
+		createStylesheet();
+		findPropToSet();
 	}
 	
 	function add(style) {
@@ -54,4 +65,4 @@ var cssrule = (function($, document, undefined) {
 		init: init,
 		add: add
 	};
-})(jQuery, document);
+})(document);
