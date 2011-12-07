@@ -5,6 +5,8 @@
  * See GPL-LICENSE.txt and MIT-LICENSE.txt files for more details.
  */
  
+(function(window, document, undefined) {
+
 /* cssrule.js
  * Version : 1
  * 
@@ -57,7 +59,7 @@ var cssrule = (function(document, undefined) {
 		return cssrule;
 	}
 	
-	return {
+	window.cssrule = {
 		/**
 		 * you must call "init" function on dom ready
 		 * TODO: should we run it automatically when "add" is used the first time ?
@@ -65,4 +67,4 @@ var cssrule = (function(document, undefined) {
 		init: init,
 		add: add
 	};
-})(document);
+})(this, document);
