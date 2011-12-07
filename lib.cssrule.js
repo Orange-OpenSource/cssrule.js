@@ -16,12 +16,14 @@
  * It was inspired by http://code.google.com/p/doctype/wiki/ArticleInstallStyles
  *
 */
-
-
-var cssrule = (function(document, undefined) {
 	
 	var propToSet, stylesheet;
 
+	function insertInPage(elt) {
+		var firstScript = document.getElementsByTagName('script')[0];
+		firstScript.parentNode.insertBefore(elt, firstScript);
+	}
+	
 	function createStylesheet() {
 		if (document.createStyleSheet) {
 			// in IE
@@ -29,9 +31,7 @@ var cssrule = (function(document, undefined) {
 		} else {
 			stylesheet = document.createElement("style");
 			stylesheet.id = "cssrule";
-			
-			// TODO: should we test if there is a head ?
-			document.getElementsByTagName("head")[0].appendChild(stylesheet);
+			insertInPage(stylesheet);
 		}
 	}
 	
