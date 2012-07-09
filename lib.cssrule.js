@@ -47,24 +47,26 @@
 		}
 	}
 	
-	function init() {
+    var initDone = false;
+	function initOnce() {
+        if (initDone) {
+            return;
+        }
+        
 		var i, cur;
 		
 		createStylesheet();
 		findPropToSet();
+        initDone = true;
 	}
 	
 	function add(style) {
+        initOnce();
 		stylesheet[propToSet] += style;
 		return cssrule;
 	}
 	
 	window.cssrule = {
-		/**
-		 * you must call "init" function on dom ready
-		 * TODO: should we run it automatically when "add" is used the first time ?
-		 */ 
-		init: init,
 		add: add
 	};
 })(this, document);

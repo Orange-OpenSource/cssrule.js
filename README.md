@@ -12,11 +12,7 @@ this library was born.
 
 How ?
 -----
-This is actually quite easy. The module exports a global called `cssrule`.
-You must call `cssrule.init()` once after the `DOMContentLoaded` event
-(aka the `ready` event in jQuery's style).
-
-Then you can call `cssrule.add(rule)`. `rule` must be a string with a valid
+Just call `cssrule.add(rule)`. `rule` must be a string with a valid
 CSS rule, which means selector, properties and values.
 
 An example ?
