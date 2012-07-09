@@ -1,5 +1,5 @@
 /*!
- * Copyright 2011 France Télécom
+ * Copyright 2011,2012 France Télécom
  * This software is distributed under the terms of either the MIT
  * License or the GNU General Public License (GPL) Version 2.
  * See GPL-LICENSE.txt and MIT-LICENSE.txt files for more details.
