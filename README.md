@@ -1,4 +1,4 @@
-CssRule, a cross-browser library for programmatically adding CSS rules
+cssrule.js, a cross-browser library for programmatically adding CSS rules
 ========
 
 Why ?
