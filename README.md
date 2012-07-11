@@ -21,3 +21,5 @@ An example ?
 var myColor = "#2565ab";
 cssrule.add("div { border-color: " + myColor + "}");
 ```
+
+You can see some live examples on [cssrule.js' simple website](http://orange-opensource.github.com/cssrule.js/).
