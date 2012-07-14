@@ -9,6 +9,12 @@ h1 {
     color: black;
     font-weight: normal;
 }
+
+h1 img {
+    vertical-align: text-bottom;
+    margin: 0 .5em;
+}
+
 h1 a {
     text-decoration: none;
 }
