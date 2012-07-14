@@ -19,6 +19,8 @@ h2 {
     font-size: 1.2em;
 }
 
+/* this part was taken from http://unindented.org/articles/2009/10/github-ribbon-using-css-transforms/
+ * but made 2012-ish */
 .ribbon {
   background-color: #ff6600; /* hsl(24,100,100) */
   background-image: -linear-gradient(linear, left top, left bottom, from(hsl(24,100%,60%)), to(hsl(24,100%,40%)));
