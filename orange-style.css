@@ -22,7 +22,8 @@ h1 span {
     color: #ff5500;
 }
 h2 {
-    font-size: 1.2em;
+    font-size: 1.4em;
+    font-weight: normal;
 }
 
 /* this part was taken from http://unindented.org/articles/2009/10/github-ribbon-using-css-transforms/
